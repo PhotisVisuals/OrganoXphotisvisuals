@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photis Visuals x ORGANO | The Visitor Magnet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        organo: {
+                            green: '#4A5D23', // Muted earthy green
+                            light: '#F4F7F0', // Off-white eco tone
+                            brown: '#8B5A2B', // Soil tone
+                            dark: '#1A1C18'   // Deep charcoal
+                        },
+                        photis: {
+                            accent: '#D4AF37' // Subtle gold for premium feel
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        /* -----------------------------------------------------------------------
+                            'landingpage.jpg' 
+                           -----------------------------------------------------------------------
+                        */
+                        'hero-pattern': "linear-gradient(to bottom, rgba(26,28,24,0.3), rgba(26,28,24,0.9)), url('landingpage.jpg')",
+                        'texture': "url('https://www.transparenttextures.com/patterns/cubes.png')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(74, 93, 35, 0.5); /* Organo Green Glow */
+            border-color: rgba(74, 93, 35, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1C18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A5D23;
+            border-radius: 4px;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body class="bg-organo-dark text-white overflow-x-hidden font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-organo-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="text-xl font-bold tracking-widest text-white">PHOTIS<span class="font-light text-photis-accent">VISUALS</span></span>
+                <span class="text-xs text-gray-500 px-2 border-l border-gray-600">x</span>
+                <span class="text-lg font-serif tracking-wide text-organo-green font-bold">ORGANO</span>
+            </div>
+            <a href="#contact" class="hidden md:block px-6 py-2 border border-white/20 rounded-full hover:bg-white hover:text-organo-dark transition-all text-sm tracking-wide uppercase">
+                Start the Dialogue
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat">
+        <div class="absolute inset-0 bg-gradient-to-t from-organo-dark via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <p class="text-organo-green font-bold uppercase tracking-[0.3em] text-sm mb-6 animate-pulse">The Digital Magnet</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-medium mb-6 leading-tight text-glow">
+                First They See.<br>
+                <span class="italic text-gray-200">Then They Arrive.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                To get them to live here, you must first inspire them to drive here. <br>
+                Use a <span class="text-white font-medium">High-Fidelity Virtual Walkthrough</span> to spark the desire that makes the journey compelling.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#vision" class="group relative px-8 py-4 bg-white text-organo-dark font-bold rounded-full overflow-hidden transition-all hover:scale-105">
+                    <span class="relative z-10">Ignite Interest</span>
+                    <div class="absolute inset-0 h-full w-full bg-organo-green transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left ease-out duration-300"></div>
+                    <span class="absolute inset-0 z-10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ignite Interest</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-70">
+            <span class="text-xs uppercase tracking-widest mb-2">Explore</span>
+            <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- The Problem / "The Why" Section -->
+    <section id="vision" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">
+                    The Barrier isn't Distance.<br>
+                    <span class="text-organo-green italic">It's Inertia.</span>
+                </h2>
+                <div class="space-y-6 text-gray-300 font-light text-lg">
+                    <p>
+                        Your clients <em>want</em> to live in a Rurban community, but they are busy. They need a compelling reason to clear their schedule and make the drive.
+                    </p>
+                    <p>
+                        Static images don't always create enough emotional pull to break that inertia. They need to <strong>feel</strong> the space first. Once they taste the reality of Organo digitally, visiting becomes a priority.
+                    </p>
+                    <div class="pl-6 border-l-2 border-organo-green italic text-white/80 mt-8">
+                        "The goal isn't to replace the visit. It's to make the visit irresistible."
+                    </div>
+                </div>
+            </div>
+            <div class="reveal relative h-[500px] w-full rounded-2xl overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2560&auto=format&fit=crop" alt="Inviting Pathway" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-organo-dark via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="text-sm uppercase tracking-widest text-photis-accent mb-2">The Motivation Gap</p>
+                    <h3 class="text-2xl font-serif text-white">Curiosity leads to Footfall</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution / Features -->
+    <section class="py-24 bg-organo-dark relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-organo-green/5 blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-1/3 h-full bg-photis-accent/5 blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <h2 class="text-3xl md:text-5xl font-serif mb-6">The High-Fidelity Hook</h2>
+                <p class="text-gray-400">
+                    We engineer an immersive environment so real that it builds anticipation. We help turn passive website visitors into informed, interested prospects.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal">
+                    <div class="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-photis-accent">
+                        <i class="fas fa-magnet text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">The "Pre-Visit" Hook</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Create an emotional connection before they arrive. When a client can virtually stand in the <em>Goshala</em> and see the scale of the eco-habitat, their interest transforms into intent. They don't just "want" to see it; they <strong>need</strong> to.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 100ms;">
+                    <div class="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-organo-green">
+                        <i class="fas fa-user-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Qualified Footfall</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The people who drive to Organo after viewing this tour aren't just curious; they are <strong>well-informed</strong>. They have already seen the property's potential. This creates a more meaningful conversation for your sales team on-site.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;">
+                    <div class="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-photis-accent">
+                        <i class="fas fa-vr-cardboard text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-Time Immersion</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        It's not a cartoonish render. It's a high-fidelity capture of reality. It proves the lushness of the greenery and the quality of the air visually, inviting them out of the city and into your world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Showcase Section -->
+    <section class="py-24 px-6 bg-[#161814]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 reveal">
+                <div class="relative rounded-lg overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2670&auto=format&fit=crop" alt="Interior Detail" class="w-full grayscale hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur px-4 py-2 text-xs border border-white/20">
+                        <span class="text-organo-green">●</span> Organo Green &nbsp; <span class="text-organo-brown">●</span> Earth Tone
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 reveal">
+                <p class="text-organo-green uppercase tracking-widest text-sm mb-4 font-bold">The Engagement Layer</p>
+                <h2 class="text-4xl font-serif mb-6">Visuals that Invite</h2>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    We build an interface designed to deepen their curiosity with every click, leading to one inevitable conclusion: "I have to go there."
+                </p>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-organo-green"></i>
+                        <span><strong>Interactive Storytelling:</strong> Learn the story of the land while exploring it.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-organo-green"></i>
+                        <span><strong>Lifestyle Layers:</strong> See the morning fog and the evening lights.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check text-organo-green"></i>
+                        <span><strong>Easy Scheduling:</strong> A "Schedule Visit" button that follows them as they explore.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us / Trust Section -->
+    <section class="py-20 border-t border-white/5">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-3xl font-serif mb-8">Why Photis Visuals?</h2>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-organo-green"></div>
+                <p class="text-lg italic text-gray-300 mb-6">
+                    "We turn light and vision into meaningful visuals that generate interest, build trust, and drive footfall."
+                </p>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="text-left">
+                        <p class="text-white font-bold">Harshitha Puranam & Pavan Kumar Midathala</p>
+                        <p class="text-sm text-gray-500">Founders, Photis Visuals</p>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-center gap-4 text-xs uppercase tracking-widest text-gray-500">
+                    <span>High Quality</span> • <span>Zero Latency</span> • <span>Story Driven</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 relative flex items-center justify-center bg-gradient-to-br from-organo-green/20 to-organo-dark">
+        <div class="text-center px-6 relative z-10 reveal">
+            <h2 class="text-5xl md:text-7xl font-serif mb-6">Let's Build Together.</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                The future of living deserves a future-ready presentation. <br>
+                Let us provide the visuals that bring buyers to your door.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="mailto:Phtotisvisuals@gmail.com" class="group px-8 py-4 bg-white text-organo-dark font-bold rounded-full hover:bg-organo-green hover:text-white transition-all flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Us: Phtotisvisuals@gmail.com</span>
+                </a>
+                <a href="tel:9949616654" class="px-8 py-4 border border-white/30 rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3 text-white">
+                    <i class="fas fa-phone"></i>
+                    <span>99496 16654</span>
+                </a>
+            </div>
+            
+            <p class="mt-8 text-sm text-gray-500">Based in Hyderabad. Ready for the World.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+            <div class="text-center md:text-left">
+                <p>&copy; 2025 Photis Visuals. All Rights Reserved.</p>
+                <p class="mt-1 opacity-50">* Images are taken from various sources</p>
+            </div>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on Scroll Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Navbar Transition
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'bg-organo-dark/95');
+                navbar.classList.remove('py-4', 'bg-organo-dark/90');
+            } else {
+                navbar.classList.remove('py-2', 'bg-organo-dark/95');
+                navbar.classList.add('py-4', 'bg-organo-dark/90');
+            }
+        });
+    </script>
+</body>
+</html>
